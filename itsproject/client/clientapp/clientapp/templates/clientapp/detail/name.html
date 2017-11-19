@@ -1,0 +1,45 @@
+<html>
+<style>
+body  {
+    background-image: url("https://s.yimg.com/dh/ap/my/themes/warm_1366x854_01.jpg");
+   
+}
+
+.button {
+    background-color: #175e33;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+</style>
+<body>
+<center>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<fieldset>
+<form action="" method="post">
+{% csrf_token %}
+<center>
+<h2>Please enter your login Credentials</h2></center>
+<div >
+    Your Aadhar: &nbsp {{ form.Aadhar }}<br>
+	<br>
+    Password:&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp {{ form.passwd }}<br>
+</div>
+<br>
+<input  class="button" type="submit" value="Get Details" />
+</form>
+</fieldset>
+</center>
+</body>
+</html>

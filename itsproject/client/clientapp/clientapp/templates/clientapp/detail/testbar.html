@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+<script>{{data3}}
+var farm=[]
+{% for item in data1 %}
+
+var kk= {{ item.F_id }}
+farm.push([kk])
+
+{% endfor %}
+var crop=0
+if (farm[0] == 5)
+{
+crop={{data3}};
+}else if(farm[0] ==6)
+{
+crop={{data4}};
+}
+document.write(crop[])
+window.onload = function () {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+  animationEnabled: true,
+  theme: "light2", // "light1", "light2", "dark1", "dark2"
+  title:{
+    text: "profit of the crop"
+  },
+  axisY: {
+    title: "Profit"
+  },
+  data: [{        
+    type: "column",  
+    showInLegend: true, 
+    legendMarkerColor: "grey",
+    legendText: "Crops",
+    dataPoints: [      
+      { y: crop[1], label: "Rice" },
+      { y: crop[2],  label: "Wheat" },
+      { y: crop[3],  label: "Maize" },
+      { y: crop[4],  label: "SugarCane" },
+      { y: crop[5],  label: "Barley" }
+    ]
+  }]
+});
+chart.render();
+
+}
+</script>
+</head>
+<body>
+<div id="chartContainer" style="height: 370px; width: 100%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</body>
+</html>

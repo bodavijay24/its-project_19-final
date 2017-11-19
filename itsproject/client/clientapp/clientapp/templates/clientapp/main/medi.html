@@ -1,0 +1,98 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+    border: 0px solid black;
+    border-collapse: collapse;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+th, td {
+    padding: 5px;
+    text-align: left;    
+}
+
+#customers {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 2px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+    padding-top: 1px;
+    padding-bottom: 5px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+body {
+    background-image: url("https://media.cntraveler.com/photos/56f2f0f8d89f2db208379833/master/pass/doctor-stethoscope-cr-getty.jpg");
+}
+</style>
+</head>
+<body>
+
+
+
+<table style="width:100%">
+  <tr>
+  
+    <td height="200"><br><h2><font color="#253754">
+<h1> <center>MEDICARE</center></h1>
+  <br>
+
+  	<center>Village:{% for item in data1 %}
+{{ item.Village }}
+{% endfor %}</center><br>
+<br>
+
+<center> Disease:{% for item in data2 %}
+{{ item.Disease }}
+{% endfor %}</center><br>
+<br>
+
+<center>Vacination:{% for item in data2 %}
+{{ item.Vaccine }}
+{% endfor %}</center>
+<br>
+
+
+<center> Availability:{% for item in data2 %}
+{{ item.Hospital}}
+{% endfor %}</center><br>
+
+</font></h2></th>
+    <td width ="100" rowspan="3"> <font color="black"> <center><h3>UPDATES</h3></center></font> <marquee bgcolor=grey width=300 height=600 direction=up > 
+<table id="customers">
+ 
+	{% for item in data %}
+{{ item.updates }}
+{% endfor %}
+	
+	
+    
+  </tr>
+ 
+</table> </marquee></td>
+  </tr>
+  
+    
+  </tr>
+</table>
+
+</body>
+</html>
+
+
+ 

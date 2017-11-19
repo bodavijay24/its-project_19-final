@@ -1,0 +1,36 @@
+ <style>
+         body  {
+            background-image: url("http://www.l-ateliergourmand.com/images/www.solidbackgrounds.com/images/2880x1800/2880x1800-light-cyan-solid-color-background.jpg");
+           
+      </style>
+<body>
+
+
+<center>
+<h1>WELCOME TO YOUR DEALERSHIP<h1>
+<h2>Hello &nbsp &nbsp{% for item in data2 %}
+{{ item.Name }}
+{% endfor %}</h2>
+<br>
+
+<br>
+{% for item in data2 %}
+<img src="http://127.0.0.1:7071{{ item.Photos }}" style="width:35%" >
+{% endfor %}<br>
+<h1>
+{% for item in data3 %}
+Crop:-{{ item.crop }} 
+{% endfor %}<br>
+{% for item in data1 %}
+Quantity:-{{ item.Quantity }} &nbsp -quintal
+{% endfor %}<br>
+
+{% for item in data1 %}
+Market price:-{{ item.MarketPrice }}
+{% endfor %}<br>
+
+
+</h1>
+
+</center>
+</body>

@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+<title>Phoenix</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+    <a href="#home" class="w3-bar-item w3-button"><b>Shine</b>village</a>
+    <!-- Float links to the right. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+      <a href="#projects" class="w3-bar-item w3-button">Projects</a>
+      <a href="#about" class="w3-bar-item w3-button">Available Dealers</a>
+      <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+      <a href="http://127.0.0.1:8081/clientapp/pie" class="w3-bar-item w3-button" target="_blank">Maps</a>
+     <!-- <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+      <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Sign Up</button> -->
+    </div>
+  </div>
+</div>
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate" action="/action_page.php">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="m11crop21.png" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+      <label><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+        
+      <button type="submit">Login</button>
+      <input type="checkbox" checked="checked"> Remember me
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+  </form>
+</div>
+<div id="id02" class="modal">
+  <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">×</span>
+  <form class="modal-content animate" action="/action_page.php">
+    <div class="container">
+      <label><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="email" required>
+
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+
+      <label><b>Repeat Password</b></label>
+      <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+      <input type="checkbox" checked="checked"> Remember me
+      <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+
+      <div class="clearfix">
+        <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+        <button type="submit" class="signupbtn">Sign Up</button>
+      </div>
+    </div>
+  </form>
+</div>
+<style>
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+
+img.avatar {
+    width: 40%;
+    border-radius: 50%;
+}
+
+.container {
+    padding: 16px;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+    
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+}
+.mySlides {display:none;}
+</style>
+<!-- Header -->
+<!--<header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
+  <img class="w3-image" src="/w3images/architect.jpg" alt="Architecture" width="1500" height="800">
+  <div class="w3-display-middle w3-margin-top w3-center">
+    <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>BR</b></span> <span class="w3-hide-small w3-text-light-grey">Architects</span></h1>
+  </div>
+</header>-->
+<br>
+<br>
+<br>
+<br>
+
+<center>
+  <div class="w3-content w3-section" >
+     <a href="https://www.facebook.com/JustFurLaughz/" target="_blank"><img class="mySlides" src="https://www.ipm.iastate.edu/ipm/info/files/images/plant/176/200.jpg" height="500" width="1000"></a>
+     <a href="https://www.facebook.com/JustFurLaughz/" target="_blank"><img class="mySlides" src="http://www.schundler.com/rice.jpg" height="500" width="1000"></a>
+     <a href="https://www.facebook.com/JustFurLaughz/" target="_blank"><img class="mySlides" src="http://ward8online.com/wp-content/uploads/ghana-house-plans-naanorley-plan_253578.jpg" height="500" width="1000"></a>
+  </div>
+  </center>
+
+
+<script>
+
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 5000); // Change image every 2 seconds
+}
+var modal = document.getElementById('id01');
+var modal = document.getElementById('id02');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+<!-- Page content -->
+<div class="w3-content w3-padding" style="max-width:1564px">
+
+  <!-- Project Section -->
+  <div class="w3-container w3-padding-32" id="projects">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Projects</h3>
+  </div>
+<!--
+  <div class="w3-row-padding">
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">HouseHolds/div>
+        <img src="" alt="House" style="width:100%">
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">My Details</div>
+        <img src="" alt="House" style="width:100%">
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Become a Dealer</div>
+        <img src="m11crop22.png" alt="House" style="width:100%">
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Barn House</div>
+        <img src="" alt="House" style="width:100%">
+      </div>
+    </div>
+  </div>
+-->
+  <div class="w3-row-padding">
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">My Details</div>
+        <a href="http://127.0.0.1:8081/clientapp/get_details" target="_blank"><img src="https://static.pexels.com/photos/106399/pexels-photo-106399.jpeg" alt="House" style="width:99%;height:250px" ></a>
+      </div>
+    </div>
+	&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp&nbsp &nbsp
+    <div class="w3-col 13 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">MediCare</div>
+        <a href="http://127.0.0.1:8081/clientapp/medi" target="_blank"><img src="http://bhmpc.com/wp-content/uploads/2015/02/medicare1.jpg" alt="House" style="width:99%;height:250px"></a>
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Become a Dealer</div>
+        <a href="http://127.0.0.1:8081/clientapp/deal" target="_blank"><img src="http://www.suplove.com/images/home/icon-dealer.png" alt="House" style="width:99%;height:250px"></a>
+      </div>
+    </div>
+   
+  </div>
+
+  <!-- About Section -->
+  <div class="w3-container w3-padding-32" id="about">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Available Dealers</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint
+      occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+      laboris nisi ut aliquip ex ea commodo consequat.
+    </p>
+  </div>
+
+  <div class="w3-row-padding w3-grayscale">
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <img src="http://i1.wp.com/www.pbs.org/wgbh/frontline/wp-content/uploads/2017/10/3602-03_PR-TP_MIKHAILOV_CU-1024x576.jpg" alt="Dealer No.1" style="width:100%;height:150px">
+      <h3>John Wick</h3>
+      <p class="w3-opacity">Dealer at Teja</p>
+      <p>Better prices at lovable price</p>
+      <p><a href="#contact"><button class="w3-button w3-light-grey w3-block">Contact</button></a></p>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <img src="http://2.bp.blogspot.com/-iFkfuyDOchQ/VAQliIzJAII/AAAAAAAACgc/LQ-QkFGSj_E/s1600/IMG_0924.JPG" alt="Jane" style="width:100%;height:150px">
+      <h3>Gundabbay</h3>
+      <p class="w3-opacity">Dealer at Lalitha</p>
+      <p>Please take estimation slip from us</p>
+      <p><a href="#contact"><button class="w3-button w3-light-grey w3-block">Contact</button></a></p>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <img src="http://www.carehospitals.com/blog/wp-content/uploads/2016/02/Dilip-Jose_CEO.jpg" alt="Mike" style="width:100%;height:150px">
+      <h3>Mike Ross</h3>
+      <p class="w3-opacity">Dealer at Reliance</p>
+      <p>Genuine quality at genuine price</p>
+      <p><a href="#contact"><button class="w3-button w3-light-grey w3-block">Contact</button></a></p>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <img src="http://i1.wp.com/www.pbs.org/wgbh/frontline/wp-content/uploads/2017/05/3513_BannonsWar_Screengrabs101-1024x576.jpg" alt="Dan" style="width:100%;height:150px">
+      <h3>Dan Star</h3>
+      <p class="w3-opacity">Dealer at Elon</p>
+      <p>Nice to meet you</p>
+      <p><a href="#contact"><button class="w3-button w3-light-grey w3-block">Contact</button></a></p>
+    </div>
+  </div>
+
+  <!-- Contact Section -->
+  <div class="w3-container w3-padding-32" id="contact">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Contact</h3>
+    <p>Lets get in touch and talk about to our Dealers</p>
+    <form action="mailto:vijaykumar.b15@iiits.in" method="post">
+      <input class="w3-input" type="text" placeholder="Name" required name="Name">
+      <input class="w3-input w3-section" type="text" placeholder="Email" required name="Email">
+	  <input class="w3-input w3-section" type="number" placeholder="Phone Number" required name="Phone">
+      <input class="w3-input w3-section" type="text" placeholder="Subject" required name="Subject">
+      <input class="w3-input w3-section" type="text" placeholder="Comment" required name="Comment">
+      <button class="w3-button w3-black w3-section" type="submit">
+        <i class="fa fa-paper-plane"></i> SEND Mail
+      </button>
+    </form>
+  </div>
+  
+<!-- End page content -->
+</div>
+
+<!-- Google Map -->
+
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-16">
+  <p>Share our page on <a href="https://www.facebook.com/JustFurLaughz/" title="W3.CSS" target="_blank" class="w3-hover-text-green">Facebook</a></p>
+</footer>
+
+<!--
+To use this code on your website, get a free API key from Google.
+Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
+-->
+
+</body>
+</html>

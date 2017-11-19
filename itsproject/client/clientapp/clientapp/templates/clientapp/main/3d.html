@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <link href="http://code.google.com//apis/maps/documentation/javascript/examples/default.css" rel="stylesheet" type="text/css">
+    <script  src="http://code.jquery.com/jquery-1.7.2.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.10&sensor=false&.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi?.js"></script>
+    
+  
+<head>
+<div >
+<center>
+
+<h1>Farm Helper</h1>
+<center>
+</head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+    <a href="#home" class="w3-bar-item w3-button"><b>Shine</b>village</a>
+    <!-- Float links to the right. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+      <a href="http://127.0.0.1:8081/clientapp/hh" class="w3-bar-item w3-button">House Holds</a>
+      <a href="http://127.0.0.1:8081/clientapp/farm" class="w3-bar-item w3-button">Pie Charts</a>
+      <a href="http://127.0.0.1:8081/clientapp/well" class="w3-bar-item w3-button">Well</a>
+      <a href="http://127.0.0.1:8081/clientapp/pie" class="w3-bar-item w3-button" >View All</a>
+     <!-- <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+      <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Sign Up</button> -->
+    </div>
+  </div>
+</div>
+
+</head>
+<body>
+&nbsp
+&nbsp
+<!-- MAPS CODE WITH FUNCTIONS -->
+<center>
+<div id="map" style="width:80%;height:600px"></div>
+</center>
+<script>
+
+
+var markers=[]
+var locations=[]
+function initialize(){
+
+
+	
+	{% for l in data4 %}
+	var b={{l.W_id}}
+	var o={{l.Latitude}}
+	var m={{l.Longitude}}
+	var De={{l.Depth}}
+	var avg={{l.AvgWaTyield}}
+	locations.push([b,o,m,2,De,avg]);
+	{% endfor %}
+
+
+	
+
+
+var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 17,
+      center: new google.maps.LatLng(17.538645,80.131241),
+      mapTypeId: google.maps.MapTypeId.HYBRID
+    });
+
+var infowindow = new google.maps.InfoWindow();
+var i;
+
+    for (i = 0; i < locations.length  ; i++) {  
+
+       if (locations[i][3]==2){
+		zz=locations[i][4]
+		
+		var icon = {
+		
+    url:'http://www.iconshock.com/img_vista/SUPERVISTA/3d_graphics/jpg/cylinder_icon.jpg', // url
+    scaledSize: new google.maps.Size(30,zz), // scaled size
+    origin: new google.maps.Point(0,0), // origin
+    anchor: new google.maps.Point(0, 0) // anchor
+};
+
+
+        	var marker = new google.maps.Marker({
+        	position: new google.maps.LatLng((locations[i][1]), (locations[i][2])),
+         icon:icon,
+         map: map
+          });
+google.maps.event.addListener(marker, 'click', (function(marker, i) {
+		return function() {
+		  infowindow.setContent('Well_ID : '+locations[i][0]+'<br>'+'Latitude :'+locations[i][1]+'<br>'+'Longitude :'+locations[i][2]+'<br>'+'Avg Yield: '+locations[i][5]+'<br>'+'Depth : '+locations[i][4]);
+		  infowindow.open(map, marker);
+	      map.setZoom(17);
+	  map.setCenter(marker.getPosition());
+		}
+	      })(marker, i));
+
+
+
+        }
+        }
+      
+
+
+	  
+}
+google.maps.event.addDomListener(window, 'load', initialize); 
+</script>
+
+&nbsp
+&nbsp
+</html>
