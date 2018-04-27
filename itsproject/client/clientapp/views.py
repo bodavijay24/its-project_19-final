@@ -11,14 +11,14 @@ from .forms import DealForm
 from .forms import VillForm
 
 
-url2=urllib.urlopen('http://127.0.0.1:7071/mem/?format=json')
-url3=urllib.urlopen('http://127.0.0.1:7071/farm/?format=json')
-url4=urllib.urlopen('http://127.0.0.1:7071/well/?format=json')
-url5=urllib.urlopen('http://127.0.0.1:7071/crop/?format=json')
-url6=urllib.urlopen('http://127.0.0.1:7071/Medi/?format=json')
-url7=urllib.urlopen('http://127.0.0.1:7071/Mup/?format=json')
-url8=urllib.urlopen('http://127.0.0.1:7071/vill/?format=json')
-url9=urllib.urlopen('http://127.0.0.1:7071/Deal/?format=json')
+url2=urllib.urlopen('http://bodavijay.pythonanywhere.com/mem/?format=json')
+url3=urllib.urlopen('http://bodavijay.pythonanywhere.com/farm/?format=json')
+url4=urllib.urlopen('http://bodavijay.pythonanywhere.com/well/?format=json')
+url5=urllib.urlopen('http://bodavijay.pythonanywhere.com/crop/?format=json')
+url6=urllib.urlopen('http://bodavijay.pythonanywhere.com/Medi/?format=json')
+url7=urllib.urlopen('http://bodavijay.pythonanywhere.com/Mup/?format=json')
+url8=urllib.urlopen('http://bodavijay.pythonanywhere.com/vill/?format=json')
+url9=urllib.urlopen('http://bodavijay.pythonanywhere.com/Deal/?format=json')
 l2=url2.read()
 l3=url3.read()
 l4=url4.read()
